@@ -1,0 +1,15 @@
+[Unit]
+Description=telegramShpigonGameBot
+After=network.target
+
+[Service]
+User=username
+Environment="SHPIGON_TOKEN=YOUR_BOT_API_TOKEN"
+WorkingDirectory=/path/to/your/local/repository/
+ExecStart=/usr/bin/dotnet telegramShpigonGameBot.dll
+Restart=always
+RestartSec=10
+SyslogIdentifier=dotnet-shpigon
+
+[Install]
+WantedBy=multi-user.target
