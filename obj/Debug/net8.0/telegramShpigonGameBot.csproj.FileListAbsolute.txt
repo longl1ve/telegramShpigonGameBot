@@ -16,3 +16,4 @@ D:\IT Projects\dotNET Core\telegramShpigonGameBot\obj\Debug\net8.0\refint\telegr
 D:\IT Projects\dotNET Core\telegramShpigonGameBot\obj\Debug\net8.0\telegramShpigonGameBot.pdb
 D:\IT Projects\dotNET Core\telegramShpigonGameBot\obj\Debug\net8.0\telegramShpigonGameBot.genruntimeconfig.cache
 D:\IT Projects\dotNET Core\telegramShpigonGameBot\obj\Debug\net8.0\ref\telegramShpigonGameBot.dll
+D:\IT Projects\dotNET Core\telegramShpigonGameBot\obj\Debug\net8.0\telegramShpigonGameBot.sourcelink.json

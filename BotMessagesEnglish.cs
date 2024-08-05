@@ -8,6 +8,7 @@ namespace telegramShpigonGameBot
         // Dictionary for storing text for messages
         public Dictionary<string, string> textMessages = new Dictionary<string, string>
         {
+            {"checkUsername", ", you do not have a username. Add it in your Telegram profile (it should start with @, for example, @username) to use the bot."},
             {"start", "<b>Hello! I'm SpyBot,</b> here to help your fun group of friends play the spy game.\n\n<b>Press to start the game.</b>"},
             {"startAlready", ", the game has already started.\nTo end the current game, enter the command <b>/stop</b>."},
             {"stopNotStarted", ", the game has not started yet."},
@@ -49,6 +50,7 @@ namespace telegramShpigonGameBot
             {"votingSpyNotShowedUpEnd", "<b>Game Over</b>\nThe spy turned out to be "},
             {"votingSpyWon", "\n\n<b>The spy won</b>"},
             {"votingSpyLose", "\n\n<b>The spy lost</b>"},
+            {"notParticipating", ", you are not participating in the game."}
         };
 
         // Dictionary for storing the inline keyboard markups
