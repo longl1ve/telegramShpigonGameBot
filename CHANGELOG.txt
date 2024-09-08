@@ -3,7 +3,7 @@ telegramShpigonGameBot Changelog
 [v0.1.0] - 31.07.2024
 - First release
 
-[v0.1.1] - 05.08.2024 (Latest)
+[v0.1.1] - 05.08.2024
 - Fix for voting mechanism in the part when it's splitting callbackQuery.Data to save username
 - Fix for voting mechanism in the part when it's deciding if the spy won
 - Logic of voting was modified (now if the spy has a tie with someone in the voting results, he wins)
@@ -11,3 +11,6 @@ telegramShpigonGameBot Changelog
 - "Who is interacting" check was added to all buttons
 - Handling actions from users without username was added (username is required to interact with bot)
 - Text dictionaries were updated
+
+[v0.2.0] - 08.09.2024 (Latest)
+- Countdown was added 

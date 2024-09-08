@@ -1,4 +1,5 @@
-﻿using Telegram.Bot;
+﻿using System.Diagnostics;
+using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -66,6 +67,41 @@ internal class Program
         return list;
     }
 
+    // Timer method
+    private static void Timer(int minutes, Message message, long chatId, ITelegramBotClient client)
+    {
+        // Stopwatch for handling execution delays
+        Stopwatch stopWatch = new Stopwatch();
+
+        for (int m = minutes - 1; m >= 0; m --)
+        {
+            for (int s = 60; s > 0; s -= 5)
+            {
+                stopWatch.Start();
+
+                if (s == 60)
+                    client.EditMessageTextAsync(chatId, message.MessageId, botMessages.textMessages["countdownStarted"] + $"\n\n0{m + 1}:00");
+
+                else if (s < 10)
+                    client.EditMessageTextAsync(chatId, message.MessageId, botMessages.textMessages["countdownStarted"] + $"\n\n0{m}:0{s}");
+
+                else     
+                    client.EditMessageTextAsync(chatId, message.MessageId, botMessages.textMessages["countdownStarted"] + $"\n\n0{m}:{s}");
+
+                stopWatch.Stop();
+                int delayTime = Convert.ToInt32(stopWatch.ElapsedMilliseconds);
+                stopWatch.Reset();
+
+                Thread.Sleep((5 * 1000) - delayTime);
+                // Checking if the game was stoped during the sleep 
+                if (!isStartedAndReady.ContainsKey(chatId)) {return;}
+            }
+        }
+
+        client.EditMessageTextAsync(chatId, message.MessageId, botMessages.textMessages["countdownStarted"] + "\n\n00:00");                
+        Thread.Sleep(requestDelay);
+    }
+
     // Async method for handling messages from users
     private static async void HandleMessages(ITelegramBotClient client, Update update)
     {
@@ -118,6 +154,9 @@ internal class Program
     {
         // Using sleep to not make too many requests
         Thread.Sleep(requestDelay);
+
+        // Declaring variable for countdowns
+        Message lastMessage;
 
         // Checking if user has username (It is necessary to have username to participate)
         if (callbackQuery.From.Username == null)
@@ -360,9 +399,11 @@ internal class Program
                     await client.EditMessageReplyMarkupAsync(callbackQuery.Message.Chat.Id, callbackQuery.Message.MessageId);
                     // Using sleep to not make too many requests
                     Thread.Sleep(requestDelay);
-                    await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    
+                    // Starting the timer
+                    lastMessage = await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    Timer(minutes: 1, lastMessage, callbackQuery.Message.Chat.Id, client);
 
-                    Thread.Sleep(60 * 1000);
                     // Checking if the game was stoped during the sleep 
                     if (!isStartedAndReady.ContainsKey(callbackQuery.Message.Chat.Id)) {goto case "break_case";}
 
@@ -396,9 +437,11 @@ internal class Program
                     await client.EditMessageReplyMarkupAsync(callbackQuery.Message.Chat.Id, callbackQuery.Message.MessageId);
                     // Using sleep to not make too many requests
                     Thread.Sleep(requestDelay);
-                    await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
 
-                    Thread.Sleep(120 * 1000);
+                    // Starting the timer
+                    lastMessage = await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    Timer(minutes: 2, lastMessage, callbackQuery.Message.Chat.Id, client);
+
                     // Checking if the game was stoped during the sleep 
                     if (!isStartedAndReady.ContainsKey(callbackQuery.Message.Chat.Id)) {goto case "break_case";}
 
@@ -425,9 +468,11 @@ internal class Program
                     await client.EditMessageReplyMarkupAsync(callbackQuery.Message.Chat.Id, callbackQuery.Message.MessageId);
                     // Using sleep to not make too many requests
                     Thread.Sleep(requestDelay);
-                    await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    
+                    // Starting the timer
+                    lastMessage = await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    Timer(minutes: 2, lastMessage, callbackQuery.Message.Chat.Id, client);
 
-                    Thread.Sleep(120 * 1000);
                     // Checking if the game was stoped during the sleep 
                     if (!isStartedAndReady.ContainsKey(callbackQuery.Message.Chat.Id)) {goto case "break_case";}
 
@@ -454,9 +499,11 @@ internal class Program
                     await client.EditMessageReplyMarkupAsync(callbackQuery.Message.Chat.Id, callbackQuery.Message.MessageId);   
                     // Using sleep to not make too many requests
                     Thread.Sleep(requestDelay);
-                    await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    
+                    // Starting the timer
+                    lastMessage = await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    Timer(minutes: 3, lastMessage, callbackQuery.Message.Chat.Id, client);
 
-                    Thread.Sleep(180 * 1000);
                     // Checking if the game was stoped during the sleep 
                     if (!isStartedAndReady.ContainsKey(callbackQuery.Message.Chat.Id)) {goto case "break_case";}
 
@@ -483,9 +530,11 @@ internal class Program
                     await client.EditMessageReplyMarkupAsync(callbackQuery.Message.Chat.Id, callbackQuery.Message.MessageId);
                     // Using sleep to not make too many requests
                     Thread.Sleep(requestDelay);
-                    await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    
+                    // Starting the timer
+                    lastMessage = await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    Timer(minutes: 3, lastMessage, callbackQuery.Message.Chat.Id, client);
 
-                    Thread.Sleep(180 * 1000);
                     // Checking if the game was stoped during the sleep 
                     if (!isStartedAndReady.ContainsKey(callbackQuery.Message.Chat.Id)) {goto case "break_case";}
 
@@ -512,9 +561,11 @@ internal class Program
                     await client.EditMessageReplyMarkupAsync(callbackQuery.Message.Chat.Id, callbackQuery.Message.MessageId);
                     // Using sleep to not make too many requests
                     Thread.Sleep(requestDelay);
-                    await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    
+                    // Starting the timer
+                    lastMessage = await client.SendTextMessageAsync(callbackQuery.Message.Chat.Id, botMessages.textMessages["countdownStarted"]);
+                    Timer(minutes: 2, lastMessage, callbackQuery.Message.Chat.Id, client);
 
-                    Thread.Sleep(120 * 1000);
                     // Checking if the game was stoped during the sleep 
                     if (!isStartedAndReady.ContainsKey(callbackQuery.Message.Chat.Id)) {goto case "break_case";}
 
