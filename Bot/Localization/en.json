@@ -1,0 +1,856 @@
+{
+  "messages": {
+    "checkUsername": ", you do not have a username. Add it in your Telegram profile (it should start with @, for example, @username) to use the bot.",
+    "start": "<b>Hello! I'm SpyBot,</b> here to help your fun group of friends play the spy game.\n\n<b>Press to start the game.</b>",
+    "startAlready": ", the game has already started.\nTo end the current game, enter the command <b>/stop</b>.",
+    "stopNotStarted": ", the game has not started yet.",
+    "stopConfirmation": ", are you sure you want to end the game?",
+    "stopAccept": ", you have ended the game.",
+    "stopDeny": ", you canceled the game ending. The game continues.",
+    "commands": "<b>Commands:</b>\n/start | /stop | /help | /commands",
+    "help": "<b>Game Rules</b>\n\nThe game consists of 5 main rounds:\n- introduction round\n- associations round\n- questions round\n- descriptions round\n- actions round\nAfter each round, there will be a guessing round.\n\nThe spy's task is to avoid letting others realize that they are the spy and to figure out which location they are in. The other players task is to reveal the spy so that, during the voting at the end of the game, the spy receives the majority of the votes.\n\n<b>The game takes approximately 20 minutes</b>",
+    "gameNotStarted": ", you have not started the game. To start, send the command <b>/start</b> or select it from the list of commands.",
+    "startgameAlready": ", the game has already started.",
+    "startgameAdvice": "Everyone who will participate in the game should press the <b>I’m playing!</b> button. Once everyone is ready to start the game, someone should press <b>Ready!</b>\n\n",
+    "startgameAdvice2": "<b> players have joined the game</b>",
+    "saveuserAlready": ", you are already participating.",
+    "saveuserNoMore": ", the maximum number of players is 10.",
+    "readyNobody": ", you cannot start the game until no one has joined.",
+    "readyStarted": ", everyone is ready and the game has started.",
+    "readyBlocked": ", you do not have a private chat with the bot or you have blocked it. <b>Start the bot in the private chat, this is necessary to start the game.</b>",
+    "readyTopic": "<b>Game topic: </b>",
+    "readyLocation": "<b>Location: </b>",
+    "readyRoleCivilian": "<b>Your role for this game: </b>",
+    "readyRoleSpy": "<b>Your role for this game:</b> Spy.",
+    "gamestarted": "<b>The game has started</b>\nEveryone should have received their roles and location information for the current game in a <b>private message from the bot.</b>",
+    "countdownStarted": "The countdown has begun...",
+    "roundEnd": "<b>Round completed</b>\nStarting the guessing round...",
+    "roundFindSpy": "<b>Guessing round</b>\nNow players will express their thoughts on who and why might be the spy.\n\n<b>The round will last 1 minute. When you press, the countdown will begin.</b>",
+    "roundFindSpyEnd": "<b>Guessing round completed</b>\nThe next round begins...",
+    "roundFindSpyEndNextVoting": "<b>Guessing round completed</b>\nVoting begins...",
+    "round1Advice": "<b>Round 1: Introduction</b>\nEach player takes turns introducing themselves with a <b>fictitious alias related to the location and your role.</b> Use non-obvious aliases so the spy doesn't guess the location; but don't use overly complex aliases so that others (not spies) can understand that you are not the spy.\n\n<b>The round will last 2 minutes. When you press, the countdown will begin.</b>",
+    "round2Advice": "<b>Round 2: Associations</b>\nEach player takes turns naming 3 associations with the location. Remember, the spy is still among you...\n\n<b>The round will last 2 minutes. When you press, the countdown will begin.</b>",
+    "round3Advice": "<b>Round 3: Questions</b>\nIn this round, players should ask and answer questions in a chain to help reveal the spy. Consequently, the person who asks the first question will receive the last question.\n\n<b>The round will last 3 minutes. When you press, the countdown will begin.</b>",
+    "round4Advice": "<b>Round 4: Descriptions</b>\nEach player describes details of the location, but in a way that isn't too obvious.\n\n<b>The round will last 3 minutes. When you press, the countdown will begin.</b>",
+    "round5Advice": "<b>Round 5: Actions</b>\nThis is the final round of the game. Players take turns performing an action that corresponds to their role in this location, but without making it too obvious, as the spy is still not definitively known... The spy should perform an action that matches their guesses about the location.\n\n<b>The round will last 2 minutes. When you press, the countdown will begin.</b>",
+    "votingAdvice": "<b>Voting</b>\nEveryone should vote now. Choose from the list the person you believe is the spy.",
+    "votingChose": " chosen ",
+    "votingAlreadyChose": ", you have already voted.",
+    "votingAllVoted": "<b>Everyone has cast their vote...</b>\n",
+    "votingAllVotedAdvice": "\n\nThe spy now has the option to reveal themselves if they choose. In this case, they simply need to name the location they believe is correct. If the spy names the location correctly, they win the game.\n\n<b>Does the spy reveal themselves?</b>",
+    "votingSpyShowedUpEnd": "<b>Game Over</b>\nIf the spy names the location correctly, they have won...\n\n<b>The game is now over</b>",
+    "votingSpyNotShowedUpEnd": "<b>Game Over</b>\nThe spy turned out to be ",
+    "votingSpyWon": "\n\n<b>The spy won</b>",
+    "votingSpyLose": "\n\n<b>The spy lost</b>"
+  },
+  "buttons": {
+    "Join": "I'm playing!",
+    "Ready": "Ready!",
+    "StartGame": "Start game",
+    "Yes": "Yes",
+    "No": "No",
+    "Begin": "Begin"
+  },
+  "topics": [
+    {
+      "name": "Airport",
+      "locations": [
+        {
+          "name": "Departure Area",
+          "roles": [
+            "Passenger",
+            "Airline Representative",
+            "Customs Officer",
+            "Security Guard",
+            "Pilot",
+            "Flight Attendant",
+            "Airport Worker",
+            "Tourist",
+            "Businessman",
+            "Duty-Free Shop Employee"
+          ]
+        },
+        {
+          "name": "Waiting Hall",
+          "roles": [
+            "Passenger",
+            "Crew Member",
+            "Security Guard",
+            "Cleaner",
+            "Tourist",
+            "Businessman",
+            "Musician",
+            "Barista",
+            "Child",
+            "Blogger"
+          ]
+        },
+        {
+          "name": "Runway",
+          "roles": [
+            "Pilot",
+            "Flight Attendant",
+            "Technician",
+            "Baggage Handler",
+            "Security Guard",
+            "Air Traffic Controller",
+            "Tourist",
+            "Photographer",
+            "Security Inspector",
+            "Firefighter"
+          ]
+        },
+        {
+          "name": "Baggage Claim",
+          "roles": [
+            "Passenger",
+            "Security Guard",
+            "Baggage Handler",
+            "Tourist",
+            "Businessman",
+            "Customs Officer",
+            "Airport Employee",
+            "Parent with Child",
+            "Cleaner",
+            "Photographer"
+          ]
+        },
+        {
+          "name": "Security Check",
+          "roles": [
+            "Security Guard",
+            "Passenger",
+            "Customs Officer",
+            "Security Service Employee",
+            "Tourist",
+            "Businessman",
+            "Airport Worker",
+            "Crew Member",
+            "Detector Specialist",
+            "Service Dog"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Beach",
+      "locations": [
+        {
+          "name": "Beach Bar",
+          "roles": [
+            "Bartender",
+            "Tourist",
+            "Local Resident",
+            "DJ",
+            "Security Guard",
+            "Cleaner",
+            "Barista",
+            "Musician",
+            "Beach Vendor",
+            "Chef"
+          ]
+        },
+        {
+          "name": "Swimming Area",
+          "roles": [
+            "Lifeguard",
+            "Swimmer",
+            "Child",
+            "Parent with Child",
+            "Tourist",
+            "Local Resident",
+            "Photographer",
+            "Swimming Coach",
+            "Security Guard",
+            "Ice Water Vendor"
+          ]
+        },
+        {
+          "name": "Surfing Area",
+          "roles": [
+            "Surfer",
+            "Surf Instructor",
+            "Tourist",
+            "Local Resident",
+            "Photographer",
+            "Lifeguard",
+            "Surf Equipment Vendor",
+            "Bartender",
+            "Child",
+            "Surf Coach"
+          ]
+        },
+        {
+          "name": "Beach Volleyball Court",
+          "roles": [
+            "Volleyball Player",
+            "Coach",
+            "Tourist",
+            "Local Resident",
+            "Photographer",
+            "Lifeguard",
+            "Referee",
+            "Security Guard",
+            "Fan",
+            "Beverage Vendor"
+          ]
+        },
+        {
+          "name": "Umbrellas and Sunbeds",
+          "roles": [
+            "Tourist",
+            "Local Resident",
+            "Waiter",
+            "Beverage Vendor",
+            "Lifeguard",
+            "Photographer",
+            "Bartender",
+            "Child",
+            "Cleaner",
+            "Security Guard"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Film Studio",
+      "locations": [
+        {
+          "name": "Filming Set",
+          "roles": [
+            "Director",
+            "Actor",
+            "Cameraman",
+            "Makeup Artist",
+            "Screenwriter",
+            "Producer",
+            "Sound Engineer",
+            "Lighting Technician",
+            "Stuntman",
+            "Security Guard"
+          ]
+        },
+        {
+          "name": "Makeup Room",
+          "roles": [
+            "Makeup Artist",
+            "Actor",
+            "Costume Designer",
+            "Assistant Director",
+            "Photographer",
+            "Hairdresser",
+            "Massage Therapist",
+            "Security Guard",
+            "Cleaner",
+            "Producer"
+          ]
+        },
+        {
+          "name": "Director's Room",
+          "roles": [
+            "Director",
+            "Assistant Director",
+            "Screenwriter",
+            "Producer",
+            "Cameraman",
+            "Actor",
+            "Makeup Artist",
+            "Costume Designer",
+            "Lighting Technician",
+            "Security Guard"
+          ]
+        },
+        {
+          "name": "Camera Service Point",
+          "roles": [
+            "Cameraman",
+            "Technician",
+            "Assistant Director",
+            "Sound Engineer",
+            "Lighting Technician",
+            "Cleaner",
+            "Photographer",
+            "Producer",
+            "Security Guard",
+            "Screenwriter"
+          ]
+        },
+        {
+          "name": "Editing Room",
+          "roles": [
+            "Editor",
+            "Director",
+            "Assistant Director",
+            "Screenwriter",
+            "Producer",
+            "Sound Engineer",
+            "Photographer",
+            "Cleaner",
+            "Security Guard",
+            "Technician"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hospital",
+      "locations": [
+        {
+          "name": "Emergency Department",
+          "roles": [
+            "Doctor",
+            "Nurse",
+            "Patient",
+            "Administrator",
+            "Security Guard",
+            "Emergency Medical Technician",
+            "Cleaner",
+            "Technician",
+            "Paramedic",
+            "Pharmacist"
+          ]
+        },
+        {
+          "name": "Operating Room",
+          "roles": [
+            "Surgeon",
+            "Anesthesiologist",
+            "Nurse",
+            "Patient",
+            "Surgical Assistant",
+            "Technician",
+            "Cleaner",
+            "Pharmacist",
+            "Security Guard",
+            "Lab Technician"
+          ]
+        },
+        {
+          "name": "Intensive Care Unit",
+          "roles": [
+            "Doctor",
+            "Nurse",
+            "Patient",
+            "Technician",
+            "Cleaner",
+            "Security Guard",
+            "Emergency Medical Technician",
+            "Paramedic",
+            "Pharmacist",
+            "Lab Technician"
+          ]
+        },
+        {
+          "name": "Laboratory",
+          "roles": [
+            "Lab Technician",
+            "Doctor",
+            "Technician",
+            "Lab Assistant",
+            "Cleaner",
+            "Security Guard",
+            "Nurse",
+            "Emergency Medical Technician",
+            "Paramedic",
+            "Pharmacist"
+          ]
+        },
+        {
+          "name": "Patient Room",
+          "roles": [
+            "Doctor",
+            "Nurse",
+            "Patient",
+            "Cleaner",
+            "Security Guard",
+            "Administrator",
+            "Emergency Medical Technician",
+            "Paramedic",
+            "Pharmacist",
+            "Lab Technician"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Military Base",
+      "locations": [
+        {
+          "name": "Command Center",
+          "roles": [
+            "Commander",
+            "Communication Officer",
+            "Analyst",
+            "Security Guard",
+            "Technician",
+            "Soldier",
+            "Administrator",
+            "Cleaner",
+            "Drone Operator",
+            "Cipher Specialist"
+          ]
+        },
+        {
+          "name": "Barracks",
+          "roles": [
+            "Soldier",
+            "Sergeant",
+            "Commander",
+            "Technician",
+            "Medic",
+            "Security Guard",
+            "Cook",
+            "Cleaner",
+            "Instructor",
+            "Paramedic"
+          ]
+        },
+        {
+          "name": "Training Ground",
+          "roles": [
+            "Soldier",
+            "Instructor",
+            "Commander",
+            "Technician",
+            "Medic",
+            "Security Guard",
+            "Paramedic",
+            "Cleaner",
+            "Cook",
+            "Observer"
+          ]
+        },
+        {
+          "name": "Shooting Range",
+          "roles": [
+            "Soldier",
+            "Instructor",
+            "Commander",
+            "Technician",
+            "Medic",
+            "Security Guard",
+            "Paramedic",
+            "Cleaner",
+            "Cook",
+            "Shooter"
+          ]
+        },
+        {
+          "name": "Vehicle Hangar",
+          "roles": [
+            "Mechanic",
+            "Technician",
+            "Soldier",
+            "Commander",
+            "Security Guard",
+            "Cleaner",
+            "Paramedic",
+            "Cook",
+            "Observer",
+            "Driver"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Casino",
+      "locations": [
+        {
+          "name": "Slot Machine Hall",
+          "roles": [
+            "Gambler",
+            "Casino Employee",
+            "Security Guard",
+            "Manager",
+            "Cleaner",
+            "Beverage Vendor",
+            "Musician",
+            "Photographer",
+            "Tourist",
+            "Dealer"
+          ]
+        },
+        {
+          "name": "Poker Table",
+          "roles": [
+            "Player",
+            "Dealer",
+            "Manager",
+            "Security Guard",
+            "Beverage Vendor",
+            "Cleaner",
+            "Tourist",
+            "Photographer",
+            "Musician",
+            "Gambler"
+          ]
+        },
+        {
+          "name": "Roulette",
+          "roles": [
+            "Player",
+            "Dealer",
+            "Security Guard",
+            "Manager",
+            "Cleaner",
+            "Beverage Vendor",
+            "Tourist",
+            "Musician",
+            "Photographer",
+            "Gambler"
+          ]
+        },
+        {
+          "name": "Bar",
+          "roles": [
+            "Bartender",
+            "Customer",
+            "Security Guard",
+            "Cleaner",
+            "Beverage Vendor",
+            "Musician",
+            "Photographer",
+            "Manager",
+            "Waiter",
+            "Tourist"
+          ]
+        },
+        {
+          "name": "VIP Room",
+          "roles": [
+            "VIP Guest",
+            "Host",
+            "Security Guard",
+            "Cleaner",
+            "Beverage Vendor",
+            "Manager",
+            "Musician",
+            "Photographer",
+            "Waiter",
+            "Tourist"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Space Station",
+      "locations": [
+        {
+          "name": "Command Module",
+          "roles": [
+            "Commander",
+            "Astronaut",
+            "Technician",
+            "Mission Control Specialist",
+            "Security Guard",
+            "Cleaner",
+            "Engineer",
+            "Communications Specialist",
+            "Pilot",
+            "Navigator"
+          ]
+        },
+        {
+          "name": "Space Laboratory",
+          "roles": [
+            "Scientist",
+            "Astronaut",
+            "Technician",
+            "Engineer",
+            "Mission Control Specialist",
+            "Cleaner",
+            "Security Guard",
+            "Lab Assistant",
+            "Navigator",
+            "Pilot"
+          ]
+        },
+        {
+          "name": "Living Module",
+          "roles": [
+            "Astronaut",
+            "Technician",
+            "Mission Control Specialist",
+            "Cleaner",
+            "Security Guard",
+            "Engineer",
+            "Communications Specialist",
+            "Cook",
+            "Navigator",
+            "Pilot"
+          ]
+        },
+        {
+          "name": "Airlock",
+          "roles": [
+            "Astronaut",
+            "Mission Control Specialist",
+            "Engineer",
+            "Technician",
+            "Security Guard",
+            "Cleaner",
+            "Navigator",
+            "Pilot",
+            "Communications Specialist",
+            "Medical Officer"
+          ]
+        },
+        {
+          "name": "Space Gym",
+          "roles": [
+            "Astronaut",
+            "Trainer",
+            "Technician",
+            "Cleaner",
+            "Security Guard",
+            "Mission Control Specialist",
+            "Engineer",
+            "Communications Specialist",
+            "Navigator",
+            "Pilot"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Submarine",
+      "locations": [
+        {
+          "name": "Captain's Bridge",
+          "roles": [
+            "Captain",
+            "Navigator",
+            "First Officer",
+            "Technician",
+            "Engineer",
+            "Security Guard",
+            "Cleaner",
+            "Cook",
+            "Helmsman",
+            "Officer"
+          ]
+        },
+        {
+          "name": "Torpedo Bay",
+          "roles": [
+            "Officer",
+            "Technician",
+            "Engineer",
+            "Security Guard",
+            "Cleaner",
+            "Navigator",
+            "Captain",
+            "Cook",
+            "First Officer",
+            "Gunner"
+          ]
+        },
+        {
+          "name": "Engine Room",
+          "roles": [
+            "Engineer",
+            "Technician",
+            "Security Guard",
+            "Cleaner",
+            "Captain",
+            "Navigator",
+            "Cook",
+            "First Officer",
+            "Gunner",
+            "Machinist"
+          ]
+        },
+        {
+          "name": "Living Quarters",
+          "roles": [
+            "Crew Member",
+            "Captain",
+            "Engineer",
+            "Technician",
+            "Security Guard",
+            "Cleaner",
+            "Cook",
+            "Navigator",
+            "First Officer",
+            "Gunner"
+          ]
+        },
+        {
+          "name": "Galley",
+          "roles": [
+            "Cook",
+            "Chef",
+            "Crew Member",
+            "Captain",
+            "Engineer",
+            "Technician",
+            "Security Guard",
+            "Cleaner",
+            "Navigator",
+            "First Officer"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cruise Ship",
+      "locations": [
+        {
+          "name": "Pool Deck",
+          "roles": [
+            "Lifeguard",
+            "Tourist",
+            "Local Resident",
+            "Waiter",
+            "Pool Attendant",
+            "Security Guard",
+            "Cleaner",
+            "Bartender",
+            "Musician",
+            "Photographer"
+          ]
+        },
+        {
+          "name": "Restaurant",
+          "roles": [
+            "Chef",
+            "Waiter",
+            "Customer",
+            "Manager",
+            "Security Guard",
+            "Cleaner",
+            "Musician",
+            "Photographer",
+            "Beverage Vendor",
+            "Tourist"
+          ]
+        },
+        {
+          "name": "Nightclub",
+          "roles": [
+            "DJ",
+            "Bartender",
+            "Bouncer",
+            "Customer",
+            "Security Guard",
+            "Cleaner",
+            "Photographer",
+            "Waiter",
+            "Musician",
+            "Manager"
+          ]
+        },
+        {
+          "name": "Cabins",
+          "roles": [
+            "Guest",
+            "Housekeeper",
+            "Security Guard",
+            "Manager",
+            "Cleaner",
+            "Bartender",
+            "Musician",
+            "Photographer",
+            "Waiter",
+            "Tourist"
+          ]
+        },
+        {
+          "name": "Gym",
+          "roles": [
+            "Trainer",
+            "Guest",
+            "Housekeeper",
+            "Security Guard",
+            "Manager",
+            "Cleaner",
+            "Photographer",
+            "Waiter",
+            "Bartender",
+            "Tourist"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Museum",
+      "locations": [
+        {
+          "name": "Exhibition Hall",
+          "roles": [
+            "Visitor",
+            "Guide",
+            "Curator",
+            "Security Guard",
+            "Cleaner",
+            "Photographer",
+            "Ticket Seller",
+            "Tourist",
+            "Museum Employee",
+            "Manager"
+          ]
+        },
+        {
+          "name": "Ancient Artifacts Room",
+          "roles": [
+            "Curator",
+            "Guide",
+            "Security Guard",
+            "Visitor",
+            "Cleaner",
+            "Photographer",
+            "Ticket Seller",
+            "Tourist",
+            "Museum Employee",
+            "Manager"
+          ]
+        },
+        {
+          "name": "Interactive Exhibits Room",
+          "roles": [
+            "Visitor",
+            "Guide",
+            "Curator",
+            "Security Guard",
+            "Cleaner",
+            "Photographer",
+            "Ticket Seller",
+            "Tourist",
+            "Museum Employee",
+            "Manager"
+          ]
+        },
+        {
+          "name": "Souvenir Shop",
+          "roles": [
+            "Shop Assistant",
+            "Customer",
+            "Security Guard",
+            "Cleaner",
+            "Photographer",
+            "Tourist",
+            "Manager",
+            "Cashier",
+            "Guide",
+            "Museum Employee"
+          ]
+        },
+        {
+          "name": "Archive",
+          "roles": [
+            "Archivist",
+            "Researcher",
+            "Security Guard",
+            "Cleaner",
+            "Photographer",
+            "Visitor",
+            "Guide",
+            "Museum Employee",
+            "Manager",
+            "Archivist Assistant"
+          ]
+        }
+      ]
+    }
+  ]
+}

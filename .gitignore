@@ -1,0 +1,52 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Pp]ublish/
+artifacts/
+
+# IDE and user-specific files
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Local tooling and package caches
+.dotnet/
+.dotnet_cli_home/
+.nuget/
+.agents/
+.codex/
+.tools/
+packages/
+*.nupkg
+*.snupkg
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+appsettings.*.local.json
+secrets.json
+*.pfx
+*.p12
+*.pem
+*.key
+
+# Logs, test results, and coverage
+*.log
+TestResults/
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+BenchmarkDotNet.Artifacts/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
