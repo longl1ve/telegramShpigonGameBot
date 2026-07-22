@@ -1,15 +1,23 @@
 [Unit]
-Description=telegramShpigonGameBot
-After=network.target
+Description=Telegram Spy Game Bot
+After=network-online.target
+Wants=network-online.target
 
 [Service]
-User=username
-Environment="SHPIGON_TOKEN=YOUR_BOT_API_TOKEN"
-WorkingDirectory=/path/to/your/local/repository/
-ExecStart=/usr/bin/dotnet telegramShpigonGameBot.dll
-Restart=always
+Type=simple
+User=telegram-bot
+Group=telegram-bot
+Environment="SHPIGON_TOKEN=replace-with-your-telegram-bot-token"
+Environment="SHPIGON_LANGUAGE=en"
+WorkingDirectory=/opt/telegram-shpigon-game-bot
+ExecStart=/usr/bin/dotnet /opt/telegram-shpigon-game-bot/telegramShpigonGameBot.dll
+Restart=on-failure
 RestartSec=10
-SyslogIdentifier=dotnet-shpigon
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+UMask=0077
 
 [Install]
 WantedBy=multi-user.target
